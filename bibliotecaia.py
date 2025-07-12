@@ -120,7 +120,7 @@ class modelClassificate1:
         exp_z=np.exp(z - np.max(z, axis=1, keepdims=True))
         return exp_z / np.sum(exp_z, axis=1, keepdims=True)
 
-    def cross_entopry_loss(self, y_true, y_pred):
+    def cross_entropy_loss(self, y_true, y_pred):
         return -np.sum(y_true * np.log(y_pred + 1e-15))/y_true.shape[0]
     
     def train_model(self, entry, goals, weights, alpha=0.01,epochs=1000, show_loss=False):
@@ -204,7 +204,7 @@ class modelClassificate1:
                 lista.append(1)
         return lista
     
-    def flattern_array(self,array):
+    def flatten_array(self,array):
         return array.flatten()
     
     def show_details_image(self,image_path):
